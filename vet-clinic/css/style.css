@@ -1,0 +1,312 @@
+/*
+=========================================
+CSS UNIFICADO DE LA CLÍNICA VETERINARIA
+=========================================
+*/
+
+/* 1. CONFIGURACIÓN GLOBAL Y FUENTES */
+
+/* ¡Asegúrate de que esta importación sea la primera, sin errores! */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --primary-color: #007bff; /* Azul fuerte (Botones, encabezados) */
+    --secondary-color: #28a745; /* Verde (Bordes, enlaces) */
+    --accent-color: #ffc107; /* Amarillo (Botón HAZ TU CITA) */
+    --background-color: #f8f9fa; /* Gris muy claro */
+    --dark-banner: #30195e; /* Color morado oscuro del banner */
+    --card-background: #ffffff; /* Blanco */
+    --shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+/* BASE GLOBAL */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: #343a40;
+    margin: 0;
+    padding: 0;
+    
+        /* 4. Asegura que el body ocupe el 100% de la altura de la ventana */
+}
+/* .
+/* ---------------------------------------------------------------------- */
+/* 2. ESTILOS DE NAVEGACIÓN Y LANDING PAGE (index.php) */
+/* ---------------------------------------------------------------------- */
+
+.main-header {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    padding: 10px 5%;
+    /* CRÍTICO: Asegura que la barra esté encima de la imagen absoluta */
+    position: relative; 
+    z-index: 100; 
+}
+
+.header-top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    width: 100px; 
+    height: auto;
+    font-weight: 700;
+    color: var(--dark-banner);
+    font-size: 1.5rem;
+}
+
+.user-nav {
+    display: flex;
+    align-items: center;
+}
+
+.user-nav a {
+    text-decoration: none;
+    color: #343a40;
+    margin-left: 20px;
+    padding: 5px 0;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.user-nav a:hover {
+    color: var(--primary-color);
+}
+
+.btn-login {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.btn-login:hover {
+    background-color: #0056b3;
+}
+
+/* HERO SECTION (Banner Morado) */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--dark-banner); 
+    color: white;
+    padding: 80px 5%;
+    min-height: 500px;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.hero-content {
+    max-width: 50%;
+    padding-right: 50px;
+    z-index: 10; 
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.btn-cita {
+    display: inline-block;
+    background-color: var(--accent-color); 
+    color: var(--dark-banner);
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.btn-cita:hover {
+    background-color: #e0a800;
+}
+
+/* CONTENEDOR DE IMAGEN DE REFERENCIA (CORRECCIÓN CLAVE) */
+.hero-image-container {
+    position: absolute; 
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 50%; 
+    height: 50%;
+    
+    /* RUTA REAL DE TU IMAGEN */
+    /* El navegador sale de la carpeta css/ (..) y entra a img/ */
+    background-image: url('../img/chicaperro.jpg'); 
+    
+    background-size: cover;
+    background-position: left ;
+    opacity: 1.0; /* Valor máximo de opacidad */
+}
+
+/* INFO SECTION */
+.info-section {
+    padding: 60px 5%;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.info-section h2 {
+    font-size: 2.5rem;
+    color: #343a40;
+    margin-bottom: 40px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card-info { 
+    background-color: #ffffff;
+    box-shadow: var(--shadow);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 45%;
+    text-align: left;
+    border-top: 5px solid var(--secondary-color);
+}
+
+/* ---------------------------------------------------------------------- */
+/* 3. ESTILOS DE LOGIN/REGISTRO Y DASHBOARD */
+/* ---------------------------------------------------------------------- */
+
+.auth-container {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background: var(--card-background);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.auth-container h2 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+input[type="email"], 
+input[type="password"],
+input[type="text"],
+input[type="date"],
+input[type="datetime-local"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.error, .alert-success {
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+.error {
+    color: #721c24; 
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-success {
+    color: #155724; 
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.link-register a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Estilos de tabla (para Dashboards) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 0.95rem;
+}
+table th {
+    background-color: #f2f2f2;
+    color: #343a40;
+}
+.action-btn {
+    width: auto; 
+    padding: 5px 8px; 
+    margin: 2px 0;
+    font-size: 12px;
+}
+.btn-confirm {
+    background-color: #007bff;
+}
+.btn-complete {
+    background-color: #28a745;
+}
+.btn-cancel {
+    background-color: #dc3545;
+}
